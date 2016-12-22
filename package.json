@@ -1,7 +1,7 @@
 {
   "name": "alexbinary.object-deep-assign",
   "description": "Like `Object.assign()` but deep 😱",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "src/index.js",
   "repository": "https://github.com/alexbinary/object-deep-assign.git",
   "author": "Alexandre Bintz <alexandre@bintz.io>",
