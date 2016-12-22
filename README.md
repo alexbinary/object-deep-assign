@@ -26,3 +26,7 @@ let o2 = {p1: {p12: 12}}
 deepAssign(o1, o2)
 // o1 = {p1: {p11:11, p12:12}}
 ```
+
+## Licence
+
+MIT
