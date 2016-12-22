@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": "https://github.com/alexbinary/object-deep-assign.git",
+  "bugs": "https://github.com/alexbinary/object-deep-assign/issues",
   "author": "Alexandre Bintz <alexandre@bintz.io>",
   "license": "MIT",
   "scripts": {
