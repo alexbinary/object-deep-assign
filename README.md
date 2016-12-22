@@ -19,8 +19,10 @@ This will install the latest version from the `master` branch, which sould alway
 
 ```javascript
 let deepAssign = require('alexbinary.object-deep-assign')
+
 let o1 = {p1: {p11: 11}}
 let o2 = {p1: {p12: 12}}
+
 deepAssign(o1, o2)
 // o1 = {p1: {p11:11, p12:12}}
 ```
