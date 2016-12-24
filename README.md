@@ -27,6 +27,18 @@ deepAssign(o1, o2)
 // o1 = {p1: {p11:11, p12:12}}
 ```
 
+## Documentation
+
+```javascript
+let deepAssign = require('alexbinary.object-deep-assign')
+```
+
+### deepAssign(target, ...sources)
+
+Copy properties of `sources` onto `target`. Return `target`.
+
+Scalar properties with same name are replaced. Object properties are merged recursively. Sources are merged sequentially into target from left to right.
+
 ## Licence
 
 MIT
