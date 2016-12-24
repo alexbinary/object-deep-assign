@@ -2,6 +2,8 @@
 
 Like `Object.assign()` but deep 😱
 
+![GitHub release](https://img.shields.io/github/release/alexbinary/object-deep-assign.svg?label="latest release")
+
 ## Install
 
 This package is not hosted on the NPM registry.
