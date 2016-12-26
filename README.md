@@ -7,7 +7,7 @@ Like `Object.assign()` but deep 😱
 ## Usage
 
 ```javascript
-let deepAssign = require('alexbinary.object-deep-assign')
+let deepAssign = require('@alexbinary/object-deep-assign')
 
 let o1 = {p1: {p11: 11}}
 let o2 = {p1: {p12: 12}}
@@ -19,7 +19,7 @@ deepAssign(o1, o2)
 ## Documentation
 
 ```javascript
-let deepAssign = require('alexbinary.object-deep-assign')
+let deepAssign = require('@alexbinary/object-deep-assign')
 ```
 
 ### deepAssign(target, ...sources)
