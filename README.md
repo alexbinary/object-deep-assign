@@ -2,7 +2,7 @@
 
 Like `Object.assign()` but deep 😱
 
-![GitHub release](https://img.shields.io/github/release/alexbinary/object-deep-assign.svg?label="latest release")
+[![GitHub release](https://img.shields.io/github/release/alexbinary/object-deep-assign.svg?label="latest release")](https://github.com/alexbinary/object-deep-assign/releases/latest)
 
 ## Install
 
