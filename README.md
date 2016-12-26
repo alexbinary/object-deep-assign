@@ -4,19 +4,6 @@ Like `Object.assign()` but deep 😱
 
 [![GitHub release](https://img.shields.io/github/release/alexbinary/object-deep-assign.svg?label="latest release")](https://github.com/alexbinary/object-deep-assign/releases/latest)
 
-## Install
-
-This package is not hosted on the NPM registry.
-You must install directly from GitHub using the npm or yarn client :
-
-```bash
-$ npm install alexbinary/object-deep-assign
-# or
-$ yarn add alexbinary/object-deep-assign
-```
-
-This will install the latest version from the `master` branch, which sould always be the latest stable version.
-
 ## Usage
 
 ```javascript
