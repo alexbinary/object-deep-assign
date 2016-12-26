@@ -2,7 +2,8 @@
 
 Like `Object.assign()` but deep 😱
 
-[![GitHub release](https://img.shields.io/github/release/alexbinary/object-deep-assign.svg?label="latest release")](https://github.com/alexbinary/object-deep-assign/releases/latest)
+[![npm](https://img.shields.io/npm/v/@alexbinary/object-deep-assign.svg)](https://www.npmjs.com/package/@alexbinary/object-deep-assign)
+[![GitHub release](https://img.shields.io/github/release/alexbinary/object-deep-assign.svg?label="github")](https://github.com/alexbinary/object-deep-assign/releases/latest)
 
 ## Usage
 
