@@ -3,8 +3,112 @@ let expect = require('chai').expect
 let deepAssign = require('../src/index')
 
 describe('object-deep-assign', function () {
+  describe('core', function () {
+    it('new scalar', function () {
+      // ## Setup
+      let a = {p1: 1}
+      let b = {p2: 2}
+      // ## TEST
+      deepAssign(a, b)
+      // ## Assert
+      expect(a).to.deep.equal({p1: 1, p2: 2})
+      // ## End
+    })
+    it('new object', function () {
+      // ## Setup
+      let a = {p1: 1}
+      let b = {p2: {p: 2}}
+      // ## TEST
+      deepAssign(a, b)
+      // ## Assert
+      expect(a).to.deep.equal({p1: 1, p2: {p: 2}})
+      // ## End
+    })
+    it('scalar on scalar', function () {
+      // ## Setup
+      let a = {p1: 1}
+      let b = {p1: 2}
+      // ## TEST
+      deepAssign(a, b)
+      // ## Assert
+      expect(a).to.deep.equal({p1: 2})
+      // ## End
+    })
+    it('object on scalar', function () {
+      // ## Setup
+      let a = {p1: 1}
+      let b = {p1: {p: 2}}
+      // ## TEST
+      deepAssign(a, b)
+      // ## Assert
+      expect(a).to.deep.equal({p1: {p: 2}})
+      // ## End
+    })
+    it('scalar on object', function () {
+      // ## Setup
+      let a = {p1: {p: 1}}
+      let b = {p1: 2}
+      // ## TEST
+      deepAssign(a, b)
+      // ## Assert
+      expect(a).to.deep.equal({p1: 2})
+      // ## End
+    })
+    describe('object on object', function () {
+      it('new scalar', function () {
+        // ## Setup
+        let a = {p: {p1: 1}}
+        let b = {p: {p2: 2}}
+        // ## TEST
+        deepAssign(a, b)
+        // ## Assert
+        expect(a).to.deep.equal({p: {p1: 1, p2: 2}})
+        // ## End
+      })
+      it('new object', function () {
+        // ## Setup
+        let a = {p: {p1: 1}}
+        let b = {p: {p2: {p: 2}}}
+        // ## TEST
+        deepAssign(a, b)
+        // ## Assert
+        expect(a).to.deep.equal({p: {p1: 1, p2: {p: 2}}})
+        // ## End
+      })
+      it('scalar on scalar', function () {
+        // ## Setup
+        let a = {p: {p1: 1}}
+        let b = {p: {p1: 2}}
+        // ## TEST
+        deepAssign(a, b)
+        // ## Assert
+        expect(a).to.deep.equal({p: {p1: 2}})
+        // ## End
+      })
+      it('object on scalar', function () {
+        // ## Setup
+        let a = {p: {p1: 1}}
+        let b = {p: {p1: {p: 2}}}
+        // ## TEST
+        deepAssign(a, b)
+        // ## Assert
+        expect(a).to.deep.equal({p: {p1: {p: 2}}})
+        // ## End
+      })
+      it('scalar on object', function () {
+        // ## Setup
+        let a = {p: {p1: {p: 1}}}
+        let b = {p: {p1: 2}}
+        // ## TEST
+        deepAssign(a, b)
+        // ## Assert
+        expect(a).to.deep.equal({p: {p1: 2}})
+        // ## End
+      })
+    })
+  })
   describe('API', function () {
-    it('accept more than 1 source', function () {
+    it('multiple sources', function () {
       // ## Setup
       let a = {p1: 1}
       let b = {p1: 2}
@@ -15,7 +119,7 @@ describe('object-deep-assign', function () {
       expect(a).to.deep.equal({p1: 3})
       // ## End
     })
-    it('change target object', function () {
+    it('change target', function () {
       // ## Setup
       let a = {p1: 1}
       let b = {p1: 2}
@@ -26,7 +130,7 @@ describe('object-deep-assign', function () {
       expect(a).to.not.deep.equal(aClone)
       // ## End
     })
-    it('does not change source objects', function () {
+    it('do not change sources', function () {
       // ## Setup
       let a = {p1: 1}
       let b = {p1: 2}
@@ -40,7 +144,7 @@ describe('object-deep-assign', function () {
       expect(c).to.deep.equal(cClone)
       // ## End
     })
-    it('return target object', function () {
+    it('return target', function () {
       // ## Setup
       let a = {p1: 1}
       let b = {p1: 2}
@@ -48,68 +152,6 @@ describe('object-deep-assign', function () {
       let o = deepAssign(a, b)
       // ## Assert
       expect(o).to.equal(a)
-      // ## End
-    })
-  })
-  describe('core', function () {
-    it('overwrite scalar root key', function () {
-      // ## Setup
-      let a = {p1: 1}
-      let b = {p1: 2}
-      // ## TEST
-      deepAssign(a, b)
-      // ## Assert
-      expect(a).to.deep.equal({p1: 2})
-      // ## End
-    })
-    it('add scalar root key', function () {
-      // ## Setup
-      let a = {p1: 1}
-      let b = {p2: 2}
-      // ## TEST
-      deepAssign(a, b)
-      // ## Assert
-      expect(a).to.deep.equal({p1: 1, p2: 2})
-      // ## End
-    })
-    it('add object root key', function () {
-      // ## Setup
-      let a = {p1: 1}
-      let b = {p2: {p: 2}}
-      // ## TEST
-      deepAssign(a, b)
-      // ## Assert
-      expect(a).to.deep.equal({p1: 1, p2: {p: 2}})
-      // ## End
-    })
-    it('overwrite scalar nested key', function () {
-      // ## Setup
-      let a = {p: {p1: 1}}
-      let b = {p: {p1: 2}}
-      // ## TEST
-      deepAssign(a, b)
-      // ## Assert
-      expect(a).to.deep.equal({p: {p1: 2}})
-      // ## End
-    })
-    it('add scalar nested key', function () {
-      // ## Setup
-      let a = {p: {p1: 1}}
-      let b = {p: {p2: 2}}
-      // ## TEST
-      deepAssign(a, b)
-      // ## Assert
-      expect(a).to.deep.equal({p: {p1: 1, p2: 2}})
-      // ## End
-    })
-    it('add object nested key', function () {
-      // ## Setup
-      let a = {p: {p1: 1}}
-      let b = {p: {p2: {p: 2}}}
-      // ## TEST
-      deepAssign(a, b)
-      // ## Assert
-      expect(a).to.deep.equal({p: {p1: 1, p2: {p: 2}}})
       // ## End
     })
   })

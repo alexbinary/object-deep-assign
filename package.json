@@ -1,12 +1,22 @@
 {
-  "name": "alexbinary.object-deep-assign",
+  "name": "@alexbinary/object-deep-assign",
+  "version": "1.0.2",
   "description": "Like `Object.assign()` but deep 😱",
-  "version": "1.0.1",
+  "keywords": [
+    "object",
+    "deep",
+    "assign",
+    "merge"
+  ],
+  "homepage": "https://github.com/alexbinary/object-deep-assign#readme",
+  "bugs": {
+    "url": "https://github.com/alexbinary/object-deep-assign/issues",
+    "email": "alexandre@bintz.io"
+  },
+  "license": "MIT",
+  "author": "Alexandre Bintz <alexandre@bintz.io>",
   "main": "src/index.js",
   "repository": "https://github.com/alexbinary/object-deep-assign.git",
-  "bugs": "https://github.com/alexbinary/object-deep-assign/issues",
-  "author": "Alexandre Bintz <alexandre@bintz.io>",
-  "license": "MIT",
   "scripts": {
     "test": "istanbul cover _mocha",
     "testw": "mocha -w"
