@@ -52,9 +52,29 @@ describe('object-deep-assign', function () {
     })
   })
   describe('core', function () {
-    it('overwrite scalar root key', function () {
+    it('overwrite scalar root key with scalar value', function () {
       // ## Setup
       let a = {p1: 1}
+      let b = {p1: 2}
+      // ## TEST
+      deepAssign(a, b)
+      // ## Assert
+      expect(a).to.deep.equal({p1: 2})
+      // ## End
+    })
+    it('overwrite scalar root key with object value', function () {
+      // ## Setup
+      let a = {p1: 1}
+      let b = {p1: {p: 2}}
+      // ## TEST
+      deepAssign(a, b)
+      // ## Assert
+      expect(a).to.deep.equal({p1: {p: 2}})
+      // ## End
+    })
+    it('overwrite object root key with scalar value', function () {
+      // ## Setup
+      let a = {p1: {p: 1}}
       let b = {p1: 2}
       // ## TEST
       deepAssign(a, b)
@@ -82,9 +102,29 @@ describe('object-deep-assign', function () {
       expect(a).to.deep.equal({p1: 1, p2: {p: 2}})
       // ## End
     })
-    it('overwrite scalar nested key', function () {
+    it('overwrite scalar nested key with scalar value', function () {
       // ## Setup
       let a = {p: {p1: 1}}
+      let b = {p: {p1: 2}}
+      // ## TEST
+      deepAssign(a, b)
+      // ## Assert
+      expect(a).to.deep.equal({p: {p1: 2}})
+      // ## End
+    })
+    it('overwrite scalar nested key with object value', function () {
+      // ## Setup
+      let a = {p: {p1: 1}}
+      let b = {p: {p1: {p: 2}}}
+      // ## TEST
+      deepAssign(a, b)
+      // ## Assert
+      expect(a).to.deep.equal({p: {p1: {p: 2}}})
+      // ## End
+    })
+    it('overwrite object nested key with scalar value', function () {
+      // ## Setup
+      let a = {p: {p1: {p: 1}}}
       let b = {p: {p1: 2}}
       // ## TEST
       deepAssign(a, b)
