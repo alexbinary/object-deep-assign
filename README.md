@@ -35,9 +35,11 @@ let deepAssign = require('@alexbinary/object-deep-assign')
 
 ### deepAssign(target, ...sources)
 
-Copy properties of `sources` onto `target`. Return `target`.
+Copy properties of `sources` onto `target`.
 
 Scalar properties with same name are replaced. Object properties are merged recursively. Sources are merged sequentially into target from left to right.
+
+Return `target`.
 
 ## Licence
 
