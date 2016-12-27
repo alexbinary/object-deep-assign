@@ -10,9 +10,9 @@ Like `Object.assign()` but deep 😱
 Install using npm or yarn :
 
 ```bash
-npm install @alexbinary/object-deep-assign
+$ npm install @alexbinary/object-deep-assign
 # or
-yarn add @alexbinary/object-deep-assign
+$ yarn add @alexbinary/object-deep-assign
 ```
 
 ## Usage
