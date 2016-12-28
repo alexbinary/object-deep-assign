@@ -2,6 +2,8 @@
 
 ## upcoming release
 
+## v1.0.8
+
 - fix automatic deploy to npm from travis
 
 ## v1.0.7
