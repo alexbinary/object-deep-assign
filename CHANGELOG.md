@@ -4,7 +4,7 @@
 
 - minor documentation update
 - update dependencies
-- update travis config to run test against all major node versions back to v4
+- update travis config to run tests against current node major version and latest LTS
 
 ## v1.0.5
 
