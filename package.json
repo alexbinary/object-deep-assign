@@ -1,6 +1,6 @@
 {
   "name": "@alexbinary/object-deep-assign",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Like `Object.assign()` but deep 😱",
   "keywords": [
     "object",
