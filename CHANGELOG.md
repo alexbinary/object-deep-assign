@@ -2,6 +2,8 @@
 
 ## upcoming release
 
+## v1.0.6
+
 - minor documentation update
 - update dependencies
 - update travis config to run tests against current node major version and latest LTS
