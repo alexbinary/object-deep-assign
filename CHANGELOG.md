@@ -2,6 +2,8 @@
 
 ## upcoming release
 
+- run tests before npm publish
+
 ## v1.0.6
 
 - minor documentation update
