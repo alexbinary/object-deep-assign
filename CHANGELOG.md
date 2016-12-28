@@ -3,6 +3,7 @@
 ## upcoming release
 
 - run tests before npm publish
+- configure automatic deploy to npm from travis
 
 ## v1.0.6
 
