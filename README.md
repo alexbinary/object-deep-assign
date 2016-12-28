@@ -10,7 +10,7 @@ Like `Object.assign()` but deep 😱
 
 ## Install
 
-Install using npm or yarn :
+Install with [npm](https://www.npmjs.com) or [yarn](https://yarnpkg.com) :
 
 ```bash
 $ npm install @alexbinary/object-deep-assign
@@ -38,11 +38,11 @@ let deepAssign = require('@alexbinary/object-deep-assign')
 
 ### deepAssign(target, ...sources)
 
-Copy properties of `sources` onto `target`.
+Copies properties of `sources` onto `target`.
 
 Scalar properties with same name are replaced. Object properties are merged recursively. Sources are merged sequentially into target from left to right.
 
-Return `target`.
+Returns `target`.
 
 ## Licence
 

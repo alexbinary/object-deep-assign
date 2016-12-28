@@ -2,6 +2,8 @@
 
 ## upcoming release
 
+- minor documentation update
+
 ## v1.0.5
 
 - use David (DM) & Travis (CI)
