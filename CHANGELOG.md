@@ -2,6 +2,8 @@
 
 ## upcoming release
 
+## v1.0.9
+
 - improve readme
 - add keywords
 
