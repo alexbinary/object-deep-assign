@@ -6,7 +6,8 @@
     "object",
     "deep",
     "assign",
-    "merge"
+    "merge",
+    "config"
   ],
   "homepage": "https://github.com/alexbinary/object-deep-assign#readme",
   "bugs": {

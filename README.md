@@ -8,6 +8,60 @@ Like `Object.assign()` but deep 😱
 [![dependencies Status](https://david-dm.org/alexbinary/object-deep-assign/status.svg)](https://david-dm.org/alexbinary/object-deep-assign)
 [![devDependencies Status](https://david-dm.org/alexbinary/object-deep-assign/dev-status.svg)](https://david-dm.org/alexbinary/object-deep-assign?type=dev)
 
+Ever needed to do `Object.assign()` but couldn't because you had nested objects that got overwritten instead of merged ?
+
+`object-deep-assign` merges objects recursively and can work with any depth. It has an API similar to `Object.assign()`.
+
+`object-deep-assign` comes handy when you need to deal with e.g. configuration objects when you have a layered config system (e.g. a default, global and local config).
+
+```javascript
+let objectDeepAssign = require('@alexbinary/object-deep-assign')
+
+let default = {
+  build: true,
+  notify: {
+    on_success: false,
+    on_failure: true,
+    options: {
+      admin_only: true
+      retry: 1
+    }
+  }
+}
+
+let global = {
+  notify: {
+    on_success: true
+    options: {
+      retry: 2
+    }
+  }
+}
+
+let user = {
+  notify: {
+    options:
+      admin_only: false
+      retry: 3
+  },
+  deploy: true
+}
+
+let config = objectDeepAssign({}, default, global, user)
+// config = {
+//   build: true,
+//   deploy: true,
+//   notify: {
+//     on_success: true,
+//     on_failure: true,
+//     options: {
+//       admin_only: false,
+//       retry: 3
+//     }
+//   }
+// }
+```
+
 ## Install
 
 Install with [npm](https://www.npmjs.com) or [yarn](https://yarnpkg.com) :
@@ -18,31 +72,35 @@ $ npm install @alexbinary/object-deep-assign
 $ yarn add @alexbinary/object-deep-assign
 ```
 
-## Usage
-
-```javascript
-let deepAssign = require('@alexbinary/object-deep-assign')
-
-let o1 = {p1: {p11: 11}}
-let o2 = {p1: {p12: 12}}
-
-deepAssign(o1, o2)
-// o1 = {p1: {p11:11, p12:12}}
-```
-
 ## Documentation
 
 ```javascript
-let deepAssign = require('@alexbinary/object-deep-assign')
+let objectDeepAssign = require('@alexbinary/object-deep-assign')
 ```
 
-### deepAssign(target, ...sources)
+### objectDeepAssign(target, ...sources)
 
 Copies properties of `sources` onto `target`.
 
 Scalar properties with same name are replaced. Object properties are merged recursively. Sources are merged sequentially into target from left to right.
 
 Returns `target`.
+
+## Tests
+
+Tests are written with [mocha](http://mochajs.org) and [chai](http://chaijs.com). To run the tests do :
+```bash
+$ npm test  # or `yarn test`
+```
+
+To run the test in watch mode do :
+```bash
+$ npm testw # or `yarn testw`
+```
+
+## Contributions
+
+Contributions are welcome, feel free to [open issues](https://github.com/alexbinary/object-deep-assign/issues) and [submit pull requests](https://github.com/alexbinary/object-deep-assign/pulls) on [GitHub](https://github.com/alexbinary/object-deep-assign) !
 
 ## Licence
 
