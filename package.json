@@ -1,12 +1,13 @@
 {
   "name": "@alexbinary/object-deep-assign",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Like `Object.assign()` but deep 😱",
   "keywords": [
     "object",
     "deep",
     "assign",
-    "merge"
+    "merge",
+    "config"
   ],
   "homepage": "https://github.com/alexbinary/object-deep-assign#readme",
   "bugs": {
