@@ -14,10 +14,12 @@ Ever needed to do `Object.assign()` but couldn't because you had nested objects 
 
 `object-deep-assign` comes handy when you need to deal with e.g. configuration objects when you have a layered config system (e.g. a default, global and local config).
 
+## Example
+
 ```javascript
 let objectDeepAssign = require('@alexbinary/object-deep-assign')
 
-let default = {
+let defaultConf = {
   build: true,
   notify: {
     on_success: false,
@@ -29,7 +31,7 @@ let default = {
   }
 }
 
-let global = {
+let globalConf = {
   notify: {
     on_success: true
     options: {
@@ -38,7 +40,7 @@ let global = {
   }
 }
 
-let user = {
+let userConf = {
   notify: {
     options:
       admin_only: false
@@ -47,8 +49,8 @@ let user = {
   deploy: true
 }
 
-let config = objectDeepAssign({}, default, global, user)
-// config = {
+let finalConf = objectDeepAssign({}, defaultConf, globalConf, userConf)
+// finalConf = {
 //   build: true,
 //   deploy: true,
 //   notify: {
@@ -61,6 +63,14 @@ let config = objectDeepAssign({}, default, global, user)
 //   }
 // }
 ```
+
+## Motivation
+
+I wanted to try and write this thing myself, with the simplest code possible.
+
+## Compatibility
+
+The code is written in plain ES2015, so it does not run on node before version 6.
 
 ## Install
 
@@ -88,7 +98,11 @@ Returns `target`.
 
 ## Tests
 
-Tests are written with [mocha](http://mochajs.org) and [chai](http://chaijs.com). To run the tests do :
+Tests are written with [mocha](http://mochajs.org) and [chai](http://chaijs.com). To run the tests first do :
+```bash
+$ npm install  # or `yarn`
+```
+to install the dev dependencies, and then do :
 ```bash
 $ npm test  # or `yarn test`
 ```
@@ -101,6 +115,17 @@ $ npm testw # or `yarn testw`
 ## Contributions
 
 Contributions are welcome, feel free to [open issues](https://github.com/alexbinary/object-deep-assign/issues) and [submit pull requests](https://github.com/alexbinary/object-deep-assign/pulls) on [GitHub](https://github.com/alexbinary/object-deep-assign) !
+
+## Related
+
+- [object-assign-deep](https://www.npmjs.com/package/object-assign-deep) by [saikojosh](https://npmjs.com/~saikojosh)
+- [object-extender](https://www.npmjs.com/package/object-extender) by [saikojosh](https://npmjs.com/~saikojosh)
+- [deep-assign](https://www.npmjs.com/package/deep-assign) by [sindresorhus](https://npmjs.com/~sindresorhus)
+- [assign-deep](https://www.npmjs.com/package/assign-deep) by [jonschlinkert](https://npmjs.com/~jonschlinkert)
+- [merge-deep](https://www.npmjs.com/package/merge-deep) by [jonschlinkert](https://npmjs.com/~jonschlinkert)
+- [mixin-deep](https://www.npmjs.com/package/mixin-deep) by [jonschlinkert](https://npmjs.com/~jonschlinkert)
+- [mini-deep-assign](https://www.npmjs.com/package/mini-deep-assign) by [alykoshin](https://npmjs.com/~alykoshin)
+- [object-merge](https://www.npmjs.com/package/object-merge) by [kastor](https://npmjs.com/~kastor)
 
 ## Licence
 

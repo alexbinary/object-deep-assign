@@ -1,12 +1,21 @@
 {
   "name": "@alexbinary/object-deep-assign",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Like `Object.assign()` but deep 😱",
   "keywords": [
     "object",
     "deep",
     "assign",
+    "extend",
     "merge",
+    "mixin",
+    "copy",
+    "recursive",
+    "prop",
+    "property",
+    "properties",
+    "key",
+    "keys",
     "config"
   ],
   "homepage": "https://github.com/alexbinary/object-deep-assign#readme",
@@ -27,5 +36,8 @@
     "chai": "^3.5.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
