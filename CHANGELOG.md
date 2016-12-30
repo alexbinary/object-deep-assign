@@ -2,6 +2,11 @@
 
 ## upcoming release
 
+- add package keywords
+- add `engine` key in package.json
+- mention similar packages in readme
+- improve readme
+
 ## v1.0.9
 
 - improve readme
