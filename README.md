@@ -102,6 +102,17 @@ $ npm testw # or `yarn testw`
 
 Contributions are welcome, feel free to [open issues](https://github.com/alexbinary/object-deep-assign/issues) and [submit pull requests](https://github.com/alexbinary/object-deep-assign/pulls) on [GitHub](https://github.com/alexbinary/object-deep-assign) !
 
+## Related
+
+- [object-assign-deep](https://www.npmjs.com/package/object-assign-deep) by [saikojosh](https://npmjs.com/~saikojosh)
+- [object-extender](https://www.npmjs.com/package/object-extender) by [saikojosh](https://npmjs.com/~saikojosh)
+- [deep-assign](https://www.npmjs.com/package/deep-assign) by [sindresorhus](https://npmjs.com/~sindresorhus)
+- [assign-deep](https://www.npmjs.com/package/assign-deep) by [jonschlinkert](https://npmjs.com/~jonschlinkert)
+- [merge-deep](https://www.npmjs.com/package/merge-deep) by [jonschlinkert](https://npmjs.com/~jonschlinkert)
+- [mixin-deep](https://www.npmjs.com/package/mixin-deep) by [jonschlinkert](https://npmjs.com/~jonschlinkert)
+- [mini-deep-assign](https://www.npmjs.com/package/mini-deep-assign) by [alykoshin](https://npmjs.com/~alykoshin)
+- [object-merge](https://www.npmjs.com/package/object-merge) by [kastor](https://npmjs.com/~kastor)
+
 ## Licence
 
 MIT
