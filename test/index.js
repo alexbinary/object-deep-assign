@@ -133,15 +133,13 @@ describe('object-deep-assign', function () {
     it('do not change sources', function () {
       // ## Setup
       let a = {p1: 1}
-      let b = {p1: 2}
-      let c = {p1: 3}
-      let bClone = Object.assign({}, b)
-      let cClone = Object.assign({}, c)
+      let b = {p1: 2, p2: {p21: 2}}
+      let c = {p1: 3, p2: {p21: 3}}
       // ## TEST
       deepAssign(a, b, c)
       // ## Assert
-      expect(b).to.deep.equal(bClone)
-      expect(c).to.deep.equal(cClone)
+      expect(b).to.deep.equal({p1: 2, p2: {p21: 2}})
+      expect(c).to.deep.equal({p1: 3, p2: {p21: 3}})
       // ## End
     })
     it('return target', function () {
