@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## upcoming release
+## v1.0.11
 
 - fix mutated source
 
