@@ -2,6 +2,8 @@
 
 ## upcoming release
 
+- fix mutated source
+
 ## v1.0.10
 
 - add package keywords
