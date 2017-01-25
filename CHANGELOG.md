@@ -2,6 +2,7 @@
 
 ## next release
 
+- rewrite README
 - rewrite tests to be more descriptive
 
 ## v1.0.11

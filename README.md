@@ -8,65 +8,54 @@ Like `Object.assign()` but deep 😱
 [![dependencies Status](https://david-dm.org/alexbinary/object-deep-assign/status.svg)](https://david-dm.org/alexbinary/object-deep-assign)
 [![devDependencies Status](https://david-dm.org/alexbinary/object-deep-assign/dev-status.svg)](https://david-dm.org/alexbinary/object-deep-assign?type=dev)
 
-Ever needed to do `Object.assign()` but couldn't because you had nested objects that got overwritten instead of merged ?
-
-`object-deep-assign` merges objects recursively and can work with any depth. It has an API similar to `Object.assign()`.
-
-`object-deep-assign` comes handy when you need to deal with e.g. configuration objects when you have a layered config system (e.g. a default, global and local config).
-
-## Example
+`object-deep-assign` merges objects recursively with an API similar to `Object.assign()`.
 
 ```javascript
-let objectDeepAssign = require('@alexbinary/object-deep-assign')
+let deepAssign = require('@alexbinary/object-deep-assign')
 
-let defaultConf = {
-  build: true,
-  notify: {
-    on_success: false,
-    on_failure: true,
-    options: {
-      admin_only: true
-      retry: 1
-    }
+let a = {
+  p0: 1,
+  p1: 1,
+  p2: {},
+  p3: {
+    p0: 1,
+    p1: 1,
+    p2: {},
+    p3: {}
   }
 }
-
-let globalConf = {
-  notify: {
-    on_success: true
-    options: {
-      retry: 2
-    }
-  }
-}
-
-let userConf = {
-  notify: {
-    options:
-      admin_only: false
-      retry: 3
+let b = {
+  p0: 2,
+  p1: {},
+  p2: 2,
+  p3: {
+    p0: 2,
+    p1: {},
+    p2: 2,
+    p3: {},
+    pb1: 1,
+    pb2: {}
   },
-  deploy: true
+  pb1: 1,
+  pb2: {}
 }
-
-let finalConf = objectDeepAssign({}, defaultConf, globalConf, userConf)
-// finalConf = {
-//   build: true,
-//   deploy: true,
-//   notify: {
-//     on_success: true,
-//     on_failure: true,
-//     options: {
-//       admin_only: false,
-//       retry: 3
-//     }
-//   }
+let result = deepAssign(a, b)
+// {
+//   p0: 2,
+//   p1: {},
+//   p2: 2,
+//   p3: {
+//     p0: 2,
+//     p1: {},
+//     p2: 2,
+//     p3: {},
+//     pb1: 1,
+//     pb2: {}
+//   },
+//   pb1: 1,
+//   pb2: {}
 // }
 ```
-
-## Motivation
-
-I wanted to try and write this thing myself, with the simplest code possible.
 
 ## Compatibility
 
@@ -85,10 +74,10 @@ $ yarn add @alexbinary/object-deep-assign
 ## Documentation
 
 ```javascript
-let objectDeepAssign = require('@alexbinary/object-deep-assign')
+let deepAssign = require('@alexbinary/object-deep-assign')
 ```
 
-### objectDeepAssign(target, ...sources)
+### deepAssign(target, ...sources)
 
 Copies properties of `sources` onto `target`.
 
@@ -98,18 +87,9 @@ Returns `target`.
 
 ## Tests
 
-Tests are written with [mocha](http://mochajs.org) and [chai](http://chaijs.com). To run the tests first do :
+Tests are written with [mocha](http://mochajs.org) and [chai](http://chaijs.com). To run the tests do :
 ```bash
-$ npm install  # or `yarn`
-```
-to install the dev dependencies, and then do :
-```bash
-$ npm test  # or `yarn test`
-```
-
-To run the test in watch mode do :
-```bash
-$ npm testw # or `yarn testw`
+$ npm test
 ```
 
 ## Contributions
