@@ -3,6 +3,10 @@ node_js:
 - node
 - '7'
 - '6'
+- '5'
+- '4'
+- '0.12'
+- '0.10'
 deploy:
   provider: npm
   email: alexandre@bintz.io

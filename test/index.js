@@ -1,11 +1,11 @@
 
-let expect = require('chai').expect
-let deepAssign = require('../src/index')
+var expect = require('chai').expect
+var deepAssign = require('../src/index')
 
 describe('object-deep-assign', function () {
   it('merges objects recursively', function () {
     // ## Setup
-    let a = {
+    var a = {
       p0: 1,
       p1: 1,
       p2: {},
@@ -16,7 +16,7 @@ describe('object-deep-assign', function () {
         p3: {}
       }
     }
-    let b = {
+    var b = {
       p0: 2,
       p1: {},
       p2: 2,
@@ -32,7 +32,7 @@ describe('object-deep-assign', function () {
       pb2: {}
     }
     // ## TEST
-    let result = deepAssign(a, b)
+    var result = deepAssign(a, b)
     // ## Assert
     expect(result).to.deep.equal({
       p0: 2,
@@ -53,8 +53,8 @@ describe('object-deep-assign', function () {
   })
   it('copies object properties', function () {
     // ## Setup
-    let a = {}
-    let b = {p: {}}
+    var a = {}
+    var b = {p: {}}
     // ## TEST
     deepAssign(a, b)
     // ## Assert
@@ -63,20 +63,20 @@ describe('object-deep-assign', function () {
   })
   it('accepts multiple sources', function () {
     // ## Setup
-    let a = {p1: 1}
-    let b = {p1: 2}
-    let c = {p1: 3}
+    var a = {p1: 1}
+    var b = {p1: 2}
+    var c = {p1: 3}
     // ## TEST
-    let result = deepAssign(a, b, c)
+    var result = deepAssign(a, b, c)
     // ## Assert
     expect(result).to.deep.equal({p1: 3})
     // ## End
   })
   it('does not change sources', function () {
     // ## Setup
-    let a = {p: 1}
-    let b = {p: 2}
-    let c = {p: 3}
+    var a = {p: 1}
+    var b = {p: 2}
+    var c = {p: 3}
     // ## TEST
     deepAssign(a, b, c)
     // ## Assert
@@ -86,8 +86,8 @@ describe('object-deep-assign', function () {
   })
   it('changes target object', function () {
     // ## Setup
-    let a = {p: 1}
-    let b = {p: 2}
+    var a = {p: 1}
+    var b = {p: 2}
     // ## TEST
     deepAssign(a, b)
     // ## Assert
@@ -96,10 +96,10 @@ describe('object-deep-assign', function () {
   })
   it('returns target object', function () {
     // ## Setup
-    let a = {p: 1}
-    let b = {p: 2}
+    var a = {p: 1}
+    var b = {p: 2}
     // ## TEST
-    let result = deepAssign(a, b)
+    var result = deepAssign(a, b)
     // ## Assert
     expect(result).to.equal(a)
     // ## End

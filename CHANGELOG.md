@@ -2,6 +2,7 @@
 
 ## next release
 
+- add compatibility with all living node versions
 - rewrite README
 - rewrite tests to be more descriptive
 

@@ -57,10 +57,6 @@ let result = deepAssign(a, b)
 // }
 ```
 
-## Compatibility
-
-The code is written in plain ES2015, so it does not run on node before version 6.
-
 ## Install
 
 Install with [npm](https://www.npmjs.com) or [yarn](https://yarnpkg.com) :
