@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## next release
+
+- rewrite tests to be more descriptive
+
 ## v1.0.11
 
 - fix mutated source
